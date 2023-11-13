@@ -20,7 +20,7 @@ const Navbar=()=>{
                     </ul>
                 </nav>
                 <Routes>
-                    <Route path='/SignIn' element={<SignIn/>}>
+                    <Route path='/SignIn' element={<SignIn/>}/>
                     
                 </Routes>
             </Router>
