@@ -5,7 +5,7 @@ import Web3 from 'web3';
 var web3 = new Web3(Web3.givenProvider);
 // change provider
 // Contract address of the deployed smart contract
-const contractAddress = '0x66883e01E8A6372DbbB0859Af0f9D8C5C44Fcd9d';
+const contractAddress = '0x9e8ec3979c8aD79Eab50e68d979839350227852B';
 const storageContract = new web3.eth.Contract(
   KiralamaKontrati,
   contractAddress
@@ -15,14 +15,12 @@ export default function AddProperty() {
 useEffect(() => {
   web3 = new Web3(Web3.givenProvider);
 });
-// Hold variables that will interact with our contract and frontend
-const [number, setUint] = useState(0);
 const [getNumber, setGet] = useState({});
 const [name,setName]=useState("");
 const [address,setAddress]=useState("");
 const [addressInfo,setAddressInfo]=useState("");
 
-const numberSet = async (t) => {
+const setFields = async (t) => {
   t.preventDefault();
   const accounts = await window.ethereum.enable();
   const account = accounts[0];
@@ -35,7 +33,10 @@ const numberSet = async (t) => {
 };
 
 const numberGet = async (t) => {
+
   t.preventDefault();
+  const accounts = await window.ethereum.enable();
+  const account = accounts[0];
   const post = await storageContract.methods.Mulkler().call();
   setGet(post);
   console.log(post);
@@ -44,7 +45,7 @@ const numberGet = async (t) => {
   return (
     <div className="main">
       <div className="card">
-        <form className="form" onSubmit={numberSet}>
+        <form className="form" onSubmit={setFields}>
           <label className="Titles">Add Property</label>
           <text className="TextEx">Name</text>
           <input
@@ -80,4 +81,3 @@ const numberGet = async (t) => {
     </div>
   );
 }
-  

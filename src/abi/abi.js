@@ -1,30 +1,4 @@
-export const KiralamaKontrati = [
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "kullaniciAdres",
-        "type": "address"
-      }
-    ],
-    "name": "CikisYapildi",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "kullaniciAdres",
-        "type": "address"
-      }
-    ],
-    "name": "GirisYapildi",
-    "type": "event"
-  },
+export const KiralamaKontrati =  [
   {
     "anonymous": false,
     "inputs": [
@@ -153,6 +127,37 @@ export const KiralamaKontrati = [
         "type": "uint256"
       }
     ],
+    "name": "kiracilarr",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "kiraciAdres",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "ad",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "adresBilgisi",
+        "type": "string"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
     "name": "kiralamalar",
     "outputs": [
       {
@@ -172,29 +177,8 @@ export const KiralamaKontrati = [
       },
       {
         "internalType": "uint256",
-        "name": "kiraBitisTarihi",
+        "name": "kiraBitisTArihi",
         "type": "uint256"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "loggedInUsers",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
       }
     ],
     "payable": false,
@@ -233,21 +217,34 @@ export const KiralamaKontrati = [
     "type": "function"
   },
   {
-    "constant": false,
-    "inputs": [],
-    "name": "GirisYap",
-    "outputs": [],
+    "constant": true,
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "mulklerr",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "sahipAdres",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "ad",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "adresBilgisi",
+        "type": "string"
+      }
+    ],
     "payable": false,
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [],
-    "name": "CikisYap",
-    "outputs": [],
-    "payable": false,
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -262,6 +259,11 @@ export const KiralamaKontrati = [
         "internalType": "string",
         "name": "adresBilgisi",
         "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "kiraciAdres",
+        "type": "address"
       }
     ],
     "name": "KiraciEkle",
@@ -282,6 +284,11 @@ export const KiralamaKontrati = [
         "internalType": "string",
         "name": "adresBilgisi",
         "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "sahipAdres",
+        "type": "address"
       }
     ],
     "name": "MulkEkle",
@@ -333,6 +340,107 @@ export const KiralamaKontrati = [
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "Kiracilar",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "kiraciAdres",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "ad",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "adresBilgisi",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct KiralamaKontrati.Kiraci[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "Mulkler",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "sahipAdres",
+            "type": "address"
+          },
+          {
+            "internalType": "string",
+            "name": "ad",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "adresBilgisi",
+            "type": "string"
+          }
+        ],
+        "internalType": "struct KiralamaKontrati.Mulk[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "Kontratlar",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "kiraciAdres",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "mulkAdres",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "kiraBaslangicTarihi",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "kiraBitisTArihi",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct KiralamaKontrati.Kiralama[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
     "type": "function"
   }
 ];

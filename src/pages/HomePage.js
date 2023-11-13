@@ -7,19 +7,21 @@ export default function HomePage() {
     <div className="main">
       <div className="Link-container">
         <Link to="/" className="Link">
-          Anasayfa
+          <div className="btn">Anasayfa</div>
         </Link>
+
         <Link to="/Add-Tenant" className="Link">
-          Kiracı Ekle
+          <div className="btn">Kiracı Ekle</div>
         </Link>
+
         <Link to="/Add-Property" className="Link">
-          Mülk Ekle
+          <div className="btn">Mülk Ekle</div>
         </Link>
+
         <Link to="/Create-Rental" className="Link">
-          Kiralama Oluştur
+          <div className="btn">Kiralama Oluştur</div>
         </Link>
       </div>
-      <button className="Link fixed-Link">Çıkış Yap</button>
     </div>
   );
 }
